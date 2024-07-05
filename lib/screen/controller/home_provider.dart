@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class NewsProvider extends ChangeNotifier
 {
   bool isLoading = false;
-  late NewsModal newsModal;
+  late NewsModel newsModal;
   Future<void> fetchData()
   async {
     NewsApiServices newsApiServices = NewsApiServices();
@@ -16,7 +16,7 @@ class NewsProvider extends ChangeNotifier
     notifyListeners();
     String? data = await newsApiServices.apiCalling();
     Map json = jsonDecode(data!);
-    newsModal = NewsModal(json);
+    newsModal = NewsModel(json);
     notifyListeners();
     isLoading = false;
     notifyListeners();

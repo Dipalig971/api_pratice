@@ -18,9 +18,11 @@ class NewsScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           } else {
             return ListView.builder(
-              itemCount: newsProvider.newsModal.articles.length,
+              itemCount: 10,
               itemBuilder: (context, index) => ListTile(
-                leading: Text(newsProvider.newsModal.articles[index].title.toString()),
+                leading: Text(newsProvider.newsModal.articles[index].title.toString(),
+                ),
+                // title: Text(newsProvider.newsModal.articles[0].author),
               ),
             );
           }
